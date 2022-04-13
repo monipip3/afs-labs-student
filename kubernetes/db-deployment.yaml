@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db-service
+  name: db-deployment
   namespace: mpuerto
   labels:
     app: db
@@ -22,7 +22,7 @@ spec:
       - envFrom:
         - secretRef:
             name: db-secret
-        name: db-service
+        name: db-deployment
         image: harbor.dev.afsmtddso.com/mpuerto-harbor-project/db:971c881-8052691
         ports: 
         - containerPort: 5432
